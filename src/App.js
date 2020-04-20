@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, Fragment } from "react";
+import { Switch, Route } from "react-router-dom";
+import { connect } from "react-redux";
+import Gnomes from "./pages/Gnomes";
+import GnomeDetail from "./pages/GnomeDetail";
+import { fetchGnomesUtil } from "./redux/utils/Gnomes";
+import { GlobalStyle } from "./styles";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
+const Main = (props) => {
+    useEffect(() => {
+        props.fetchGnomes();
+    }, [props]);
+    return (
+        <Fragment>
+            <GlobalStyle />
+            <Switch>
+                <Route path="/gnome/:id" component={GnomeDetail} />
+                <Route path="/" component={Gnomes} />
+            </Switch>
+        </Fragment>
+    );
+};
+const mapStateToProps = (state) => ({
+    gnomes: state.gnomes,
+});
+const mapDispatchToProps = (dispatch) => ({
+    fetchGnomes: () => dispatch(fetchGnomesUtil()),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(Main);
