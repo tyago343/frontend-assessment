@@ -7,7 +7,10 @@ export const HeaderWrapper = styled.header`
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    background-color: #00ff00;
+    background: linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
+    background-color: #44c767;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #2f6627;
 `;
 export const H1 = styled.h1`
     margin: 0;

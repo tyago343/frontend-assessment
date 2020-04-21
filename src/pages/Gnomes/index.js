@@ -37,26 +37,28 @@ const Gnomes = (props) => {
                     ? ` and this profession have  ${filteredGnomes.length} workers`
                     : ""}
             </h2>
-            <WindowScroller>
-                {({ height, scrollTop }) => (
-                    <AutoSizer disableHeight>
-                        {({ width }) => (
-                            <List
-                                autoHeight
-                                height={height}
-                                width={width}
-                                scrollTop={scrollTop}
-                                rowHeight={18}
-                                rowRenderer={renderRow}
-                                rowCount={
-                                    filteredGnomes && filteredGnomes.length
-                                }
-                                overscanRowCount={5}
-                            />
-                        )}
-                    </AutoSizer>
-                )}
-            </WindowScroller>
+            <div style={{ backgroundColor: "red", flex: "1 1 auto" }}>
+                <WindowScroller>
+                    {({ height, scrollTop }) => (
+                        <AutoSizer disableHeight>
+                            {({ width }) => (
+                                <List
+                                    autoHeight
+                                    height={height}
+                                    width={width}
+                                    scrollTop={scrollTop}
+                                    rowHeight={18}
+                                    rowRenderer={renderRow}
+                                    rowCount={
+                                        filteredGnomes && filteredGnomes.length
+                                    }
+                                    overscanRowCount={5}
+                                />
+                            )}
+                        </AutoSizer>
+                    )}
+                </WindowScroller>
+            </div>
         </Fragment>
     );
 };

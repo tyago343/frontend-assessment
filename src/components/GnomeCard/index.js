@@ -1,16 +1,34 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { ProfessionListCard, H2, DataContainer, CardWrapper } from "./styles";
+import React, { useState } from "react";
+import {
+    H2,
+    DataContainer,
+    CardWrapper,
+    GnomeLink,
+    ProfessionsButton,
+    MeetGnomeButton,
+} from "./styles";
+import ProfessionList from "../ProfessionList";
 const GnomeCard = ({ gnome }) => {
+    let [display, setDisplay] = useState(false);
     return (
-        <Link key={gnome.id} to={`/gnome/${gnome.id}`}>
+        <GnomeLink key={gnome.id}>
             <CardWrapper>
                 <DataContainer>
                     <H2>{gnome.name}</H2>
-                    <ProfessionListCard gnome={gnome} />
+                    <ProfessionsButton
+                        onClick={() => {
+                            setDisplay(!display);
+                        }}
+                    >
+                        Professions
+                    </ProfessionsButton>
+                    <ProfessionList gnome={gnome} display={display} />
+                    <MeetGnomeButton to={`/gnome/${gnome.id}`}>
+                        Meet gnome
+                    </MeetGnomeButton>
                 </DataContainer>
             </CardWrapper>
-        </Link>
+        </GnomeLink>
     );
 };
 export default GnomeCard;
