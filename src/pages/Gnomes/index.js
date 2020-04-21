@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { WindowScroller, AutoSizer, List } from "react-virtualized";
 import GnomeCard from "../../components/GnomeCard";
 import Header from "../../components/Header";
+import "react-virtualized/styles.css";
 
 const Gnomes = (props) => {
     const [filteredGnomes, setFilteredGnomes] = useState([]);
@@ -25,8 +26,14 @@ const Gnomes = (props) => {
             setFilteredGnomes(newArr);
         }
     }, [props.selectedProfession, props.gnomes]);
-    const renderRow = ({ index }) => {
-        return <GnomeCard key={index} gnome={filteredGnomes[index]} />;
+    const renderRow = ({ index, style }) => {
+        return (
+            <GnomeCard
+                key={index}
+                gnome={filteredGnomes[index]}
+                style={style}
+            />
+        );
     };
     return (
         <Fragment>
@@ -47,11 +54,9 @@ const Gnomes = (props) => {
                                     height={height}
                                     width={width}
                                     scrollTop={scrollTop}
-                                    rowHeight={18}
+                                    rowHeight={1}
                                     rowRenderer={renderRow}
-                                    rowCount={
-                                        filteredGnomes && filteredGnomes.length
-                                    }
+                                    rowCount={filteredGnomes.length}
                                     overscanRowCount={5}
                                 />
                             )}

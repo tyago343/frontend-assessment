@@ -9,7 +9,7 @@ import { GlobalStyle } from "./styles";
 const Main = (props) => {
     useEffect(() => {
         props.fetchGnomes();
-    }, [props]);
+    }, []);
     return (
         <Fragment>
             <GlobalStyle />
