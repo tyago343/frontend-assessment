@@ -1,5 +1,11 @@
 import React, { useEffect } from "react";
-import { ProfessionTitle, ProfessionContainer, Select, Option } from "./styles";
+import {
+    ProfessionTitle,
+    ProfessionContainer,
+    Select,
+    Option,
+    H2,
+} from "./styles";
 import { connect } from "react-redux";
 import {
     registerProfessionsUtil,
@@ -11,6 +17,7 @@ const ProfessionBox = ({
     allProfessions,
     selectProfession,
     selectedProfession,
+    filteredGnomes,
 }) => {
     useEffect(() => {
         let profArr = [];
@@ -47,12 +54,19 @@ const ProfessionBox = ({
                         </Option>
                     ))}
             </Select>
+            <H2>
+                {`You're filter by: ${selectedProfession}`}
+                {selectedProfession !== "all"
+                    ? ` and this profession have  ${filteredGnomes.length} workers`
+                    : ""}
+            </H2>
         </ProfessionContainer>
     );
 };
 const mapStateToProps = (state) => ({
     allProfessions: state.professions.allProfessions,
     gnomes: state.gnomes,
+    selectedProfession: state.professions.selectedProfession,
 });
 const mapDispatchToProps = (dispatch) => ({
     registerProfessions: (profArr) =>

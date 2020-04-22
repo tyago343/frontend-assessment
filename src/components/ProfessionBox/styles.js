@@ -1,32 +1,12 @@
 import styled from "styled-components";
 
-export const HeaderWrapper = styled.header`
-    margin: 0;
-    padding: 10px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    background: linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
-    background-color: #44c767;
-    text-decoration: none;
-    text-shadow: 0px 1px 0px #2f6627;
-`;
-export const H1 = styled.h1`
-    margin: 0;
-    font-size: 40px;
-    font-weight: 900;
-`;
-export const PopulationLegend = styled.p`
-    margin: 0;
-    font-size: 40px;
-    font-weight: 900;
-`;
 export const ProfessionContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 30%;
+    margin: 25px auto 0;
+    text-align: center;
 `;
 export const ProfessionTitle = styled.p`
     color: #1f7a7a;
@@ -46,4 +26,9 @@ export const Select = styled.select`
 `;
 export const Option = styled.option`
     padding: 30px;
+`;
+export const H2 = styled.h2`
+    max-width: 400px;
+    width: 100%;
+    margin: 25px 0 0;
 `;

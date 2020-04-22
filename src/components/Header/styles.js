@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const HeaderWrapper = styled.header`
     margin: 0;
@@ -16,6 +17,10 @@ export const H1 = styled.h1`
     margin: 0;
     font-size: 40px;
     font-weight: 900;
+`;
+export const H1Link = styled(Link)`
+    text-decoration: none;
+    color: #000000;
 `;
 export const PopulationLegend = styled.p`
     margin: 0;

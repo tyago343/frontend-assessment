@@ -31,13 +31,7 @@ const Gnomes = (props) => {
 
     return (
         <Fragment>
-            <Header />
-            <h2>
-                You&apos;re filter by: {props.selectedProfession}
-                {props.selectedProfession !== "all"
-                    ? ` and this profession have  ${filteredGnomes.length} workers`
-                    : ""}
-            </h2>
+            <Header filteredGnomes={filteredGnomes} />
             <ListWrapper>
                 <ComponentPaginated
                     data={filteredGnomes}
