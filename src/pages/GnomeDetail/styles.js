@@ -4,40 +4,27 @@ import { Link } from "react-router-dom";
 export const FichaGnome = styled.div`
     display: flex;
     justify-content: center;
+    flex-direction: column;
     width: 100%;
     max-width: 720px;
     margin: auto;
-    min-width: 560px;
     margin-bottom: 70px;
-    background-color: #ededee;
-`;
-export const BackLink = styled(Link)`
-    display: block;
-    width: 50%;
-    max-width: 200px;
-    background-color: #00ff00;
-    padding: 10px;
+    background-color: #cccccc;
+    margin-top: 50px;
+    padding: 25px 30px;
     text-align: center;
-    margin-bottom: 15px;
 `;
+
 export const ImgContainer = styled.div`
     max-width: 100%;
     text-align: center;
 `;
 export const AboutContainer = styled.div`
-    width: 60%;
-    margin: auto;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
 `;
-export const GnomeFriendsContainer = styled.div`
-    width: 60%;
-    margin: auto;
-`;
-export const GnomeFriendsList = styled.ul`
-    margin-top: 10px;
-`;
-export const GnomeProfessionsContainer = styled.div`
-    float: left;
-`;
-export const GnomeCharacteristicsContainer = styled.div`
-    float: right;
-`;
+export const GnomeFriendsContainer = styled.div``;
+export const GnomeFriendsList = styled.ul``;
+export const GnomeProfessionsContainer = styled.div``;
+export const GnomeCharacteristicsContainer = styled.div``;

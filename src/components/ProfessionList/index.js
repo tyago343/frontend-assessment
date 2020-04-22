@@ -1,8 +1,8 @@
 import React from "react";
 import { Div, Profession, H3 } from "./styles";
-const ProfessionList = ({ gnome, display }) => {
+const ProfessionList = ({ gnome, display, detailPage }) => {
     return (
-        <Div display={display}>
+        <Div display={display} detailPage={detailPage}>
             <H3>Professions:</H3>
 
             {(gnome.professions &&

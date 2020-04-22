@@ -4,7 +4,6 @@ export const ProfessionContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 30%;
     margin: 25px auto 0;
     text-align: center;
 `;
