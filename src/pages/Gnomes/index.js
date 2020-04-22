@@ -1,12 +1,14 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { WindowScroller, AutoSizer, List } from "react-virtualized";
 import GnomeCard from "../../components/GnomeCard";
 import Header from "../../components/Header";
 import "react-virtualized/styles.css";
+import ComponentPaginated from "../../components/ComponentPaginated";
+import { ListWrapper } from "./styles";
 
 const Gnomes = (props) => {
-    const [filteredGnomes, setFilteredGnomes] = useState([]);
+    var [filteredGnomes, setFilteredGnomes] = useState([]);
+
     useEffect(() => {
         if (props.selectedProfession === "all" || !props.selectedProfession) {
             setFilteredGnomes(props.gnomes);
@@ -26,15 +28,7 @@ const Gnomes = (props) => {
             setFilteredGnomes(newArr);
         }
     }, [props.selectedProfession, props.gnomes]);
-    const renderRow = ({ index, style }) => {
-        return (
-            <GnomeCard
-                key={index}
-                gnome={filteredGnomes[index]}
-                style={style}
-            />
-        );
-    };
+
     return (
         <Fragment>
             <Header />
@@ -44,26 +38,12 @@ const Gnomes = (props) => {
                     ? ` and this profession have  ${filteredGnomes.length} workers`
                     : ""}
             </h2>
-            <div style={{ backgroundColor: "red", flex: "1 1 auto" }}>
-                <WindowScroller>
-                    {({ height, scrollTop }) => (
-                        <AutoSizer disableHeight>
-                            {({ width }) => (
-                                <List
-                                    autoHeight
-                                    height={height}
-                                    width={width}
-                                    scrollTop={scrollTop}
-                                    rowHeight={1}
-                                    rowRenderer={renderRow}
-                                    rowCount={filteredGnomes.length}
-                                    overscanRowCount={5}
-                                />
-                            )}
-                        </AutoSizer>
-                    )}
-                </WindowScroller>
-            </div>
+            <ListWrapper>
+                <ComponentPaginated
+                    data={filteredGnomes}
+                    Component={GnomeCard}
+                />
+            </ListWrapper>
         </Fragment>
     );
 };
