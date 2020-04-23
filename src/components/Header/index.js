@@ -1,6 +1,12 @@
 import React, { Fragment } from "react";
 import { connect } from "react-redux";
-import { HeaderWrapper, PopulationLegend, H1, H1Link } from "./styles";
+import {
+    HeaderWrapper,
+    PopulationLegend,
+    H1,
+    H1Link,
+    ProfessionLabel,
+} from "./styles";
 import ProfessionBox from "../ProfessionBox";
 
 const Header = ({
@@ -15,7 +21,11 @@ const Header = ({
                 <H1Link to="/">
                     <H1>Brastlewark</H1>
                 </H1Link>
-                {detailPage ? `Searched profession: ${selectedProfession}` : ""}
+                <ProfessionLabel>
+                    {detailPage
+                        ? `Searched profession: ${selectedProfession}`
+                        : ""}
+                </ProfessionLabel>
                 <PopulationLegend>Population: {gnomes.length}</PopulationLegend>
             </HeaderWrapper>
             {detailPage ? (

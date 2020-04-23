@@ -17,6 +17,9 @@ export const H1 = styled.h1`
     margin: 0;
     font-size: 40px;
     font-weight: 900;
+    @media screen and (max-width: 625px) {
+        font-size: 25px;
+    }
 `;
 export const H1Link = styled(Link)`
     text-decoration: none;
@@ -24,14 +27,16 @@ export const H1Link = styled(Link)`
 `;
 export const PopulationLegend = styled.p`
     margin: 0;
-    font-size: 40px;
-    font-weight: 900;
+    font-size: 35px;
+    font-weight: 700;
+    @media screen and (max-width: 625px) {
+        font-size: 20px;
+    }
 `;
-export const ProfessionContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 30%;
+export const ProfessionLabel = styled.p`
+    @media screen and (max-width: 625px) {
+        display: none;
+    }
 `;
 export const ProfessionTitle = styled.p`
     color: #1f7a7a;

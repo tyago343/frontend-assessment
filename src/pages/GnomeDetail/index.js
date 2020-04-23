@@ -7,6 +7,7 @@ import {
     AboutContainer,
     GnomeFriendsContainer,
     GnomeCharacteristicsContainer,
+    Img,
 } from "./styles";
 import Header from "../../components/Header";
 import ProfessionList from "../../components/ProfessionList";
@@ -20,14 +21,14 @@ const GnomeDetail = ({ gnome, match, getGnome }) => {
             <Header detailPage />
             <FichaGnome key={gnome.id}>
                 <ImgContainer>
-                    <img src={gnome.thumbnail} alt={gnome.name} />
+                    <Img src={gnome.thumbnail} alt={gnome.name} />
                 </ImgContainer>
                 <div className="about-gnome">
                     <h2>{gnome.name}</h2>
                     <AboutContainer>
                         <ProfessionList gnome={gnome} display detailPage />
                         <GnomeCharacteristicsContainer>
-                            <span>Characteristics:</span>
+                            <h3>Characteristics:</h3>
                             <ul>
                                 <li>
                                     Hair color:{" "}
@@ -53,13 +54,13 @@ const GnomeDetail = ({ gnome, match, getGnome }) => {
                             </ul>
                         </GnomeCharacteristicsContainer>
                         <GnomeFriendsContainer>
-                            Friends:
+                            <h3>Friends:</h3>
                             <ul>
                                 {gnome.friends
                                     ? gnome.friends.map((friend) => (
                                           <li key={friend}>{friend}</li>
                                       ))
-                                    : "This gnome isn't very friendly!! :("}
+                                    : "This gnome likes to be alone"}
                             </ul>
                         </GnomeFriendsContainer>
                     </AboutContainer>

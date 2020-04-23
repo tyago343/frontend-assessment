@@ -29,6 +29,7 @@ export const DataContainer = styled.div`
     display: flex;
     justify-content: space-between;
     text-overflow;
+    align-items: center;
     @media screen and (max-width: 768px){
         padding: 0;
     }
