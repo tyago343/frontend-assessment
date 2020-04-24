@@ -8,6 +8,7 @@ import {
     GnomeFriendsContainer,
     GnomeCharacteristicsContainer,
     Img,
+    BackButton,
 } from "./styles";
 import Header from "../../components/Header";
 import ProfessionList from "../../components/ProfessionList";
@@ -20,6 +21,7 @@ const GnomeDetail = ({ gnome, match, getGnome }) => {
         <Fragment>
             <Header detailPage />
             <FichaGnome key={gnome.id}>
+                <BackButton to="/">Back</BackButton>
                 <ImgContainer>
                     <Img src={gnome.thumbnail} alt={gnome.name} />
                 </ImgContainer>

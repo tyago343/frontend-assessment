@@ -17,7 +17,7 @@ export const H1 = styled.h1`
     margin: 0;
     font-size: 40px;
     font-weight: 900;
-    @media screen and (max-width: 625px) {
+    @media screen and (max-width: 725px) {
         font-size: 25px;
     }
 `;
@@ -29,7 +29,7 @@ export const PopulationLegend = styled.p`
     margin: 0;
     font-size: 35px;
     font-weight: 700;
-    @media screen and (max-width: 625px) {
+    @media screen and (max-width: 725px) {
         font-size: 20px;
     }
 `;

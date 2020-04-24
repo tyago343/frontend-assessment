@@ -1,10 +1,10 @@
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 export const FichaGnome = styled.div`
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 100%;
+    width: 95%;
     max-width: 720px;
     margin: 50px auto 70px;
     background-color: #cccccc;
@@ -61,4 +61,29 @@ export const GnomeCharacteristicsContainer = styled.div`
 `;
 export const Img = styled.img`
     max-width: 350px;
+`;
+export const BackButton = styled(Link)`
+box-shadow: inset 0px 39px 0px -24px #44c767;
+background-color: #44c767;
+border-radius: 4px;
+border: 1px solid #ffffff;
+cursor: pointer;
+color: #ffffff;
+font-family: Arial;
+font-size: 15px;
+padding: 6px 15px;
+text-decoration: none;
+text-shadow: 0px 1px 0px #b23e35;
+max-width: 120px;
+margin-bottom: 20px;
+&:hover {
+    background-color: #5cbf2a;
+}
+&:active {
+    position: relative;
+    top: 1px;
+}
+@media screen and (max-width: 625px) {
+    margin: 10px; 0;
+}
 `;
