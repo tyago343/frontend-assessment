@@ -39,7 +39,7 @@ export const DataContainer = styled.div`
         align-items: center;
     }
 `;
-export const H2 = styled(Link)`
+export const H2 = styled.h2`
     color: #000000;
     font-size: 22px;
     text-align: center;
@@ -83,7 +83,7 @@ export const ProfessionsButton = styled.button`
         margin: 10px; 0;
     }
 `;
-export const MeetGnomeButton = styled(Link)`
+export const MeetGnomeButton = styled.p`
     box-shadow: inset 0px 39px 0px -24px #e67a73;
     background-color: #e4685d;
     border-radius: 4px;

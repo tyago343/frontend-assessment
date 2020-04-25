@@ -15,7 +15,7 @@ const GnomeCard = ({ gnome }) => {
         <GnomeLink key={gnome.id}>
             <CardWrapper>
                 <DataContainer>
-                    <H2>{gnome.name}</H2>
+                    <H2 to={`/gnome/${gnome.id}`}>{gnome.name}</H2>
                     <Ctas>
                         <ProfessionsButton
                             onClick={() => {

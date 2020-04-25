@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import App from "./App";
+
 import GnomeCard from "../index";
 
 const gnome = {
@@ -23,5 +23,7 @@ const gnome = {
     friends: ["Cogwitz Chillwidget", "Tinadette Chillbuster"],
 };
 test("Component renders gnome name", () => {
-    const container = render(<GnomeCard gnome={gnome} />);
+    render(<GnomeCard gnome={gnome} />);
+    const testName = "Tobus Quickwhistle";
+    expect(screen.queryByText(testName));
 });
