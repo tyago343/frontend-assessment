@@ -1,4 +1,4 @@
-import React, { useState, Fragment, useEffect } from "react";
+import React, { useState, Fragment } from "react";
 import { Paginator, Page } from "./styles";
 
 const ComponentPaginated = ({ data, Component }) => {
@@ -13,9 +13,7 @@ const ComponentPaginated = ({ data, Component }) => {
     const renderGnomes = currentGnomes.map((gnome, index) => {
         return <Component gnome={gnome} key={index} />;
     });
-    useEffect(() => {
-        setPage(1);
-    }, []);
+
     const pageNumbers = [];
     for (let i = 1; i <= Math.ceil(data.length / qtyPerPage); i++) {
         pageNumbers.push(i);

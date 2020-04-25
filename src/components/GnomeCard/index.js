@@ -9,10 +9,10 @@ import {
     Ctas,
 } from "./styles";
 import ProfessionList from "../ProfessionList";
-const GnomeCard = ({ gnome, styles }) => {
+const GnomeCard = ({ gnome }) => {
     let [display, setDisplay] = useState(false);
     return (
-        <GnomeLink key={gnome.id} styles={styles}>
+        <GnomeLink key={gnome.id}>
             <CardWrapper>
                 <DataContainer>
                     <H2>{gnome.name}</H2>
