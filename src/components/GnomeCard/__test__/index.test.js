@@ -1,5 +1,11 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import {
+    render,
+    screen,
+    cleanup,
+    fireEvent,
+    getByText,
+} from "@testing-library/react";
 
 import GnomeCard from "../index";
 
@@ -22,8 +28,16 @@ const gnome = {
     ],
     friends: ["Cogwitz Chillwidget", "Tinadette Chillbuster"],
 };
-test("Component renders gnome name", () => {
-    render(<GnomeCard gnome={gnome} />);
-    const testName = "Tobus Quickwhistle";
-    expect(screen.queryByText(testName));
+describe("GnomeCard Component", () => {
+    test("If Component don't receive gnome, show string", () => {
+        const container = render(<GnomeCard />);
+        const text = "Gnome was not received";
+        expect(container.getByText(text));
+    });
+    afterEach(cleanup);
+    test("Component renders gnome name", () => {
+        const container = render(<GnomeCard gnome={gnome} />);
+        const testName = "Tobus Quickwhistle";
+        expect(screen.queryByText(testName));
+    });
 });

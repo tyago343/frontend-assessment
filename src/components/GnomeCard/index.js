@@ -11,7 +11,8 @@ import {
 import ProfessionList from "../ProfessionList";
 const GnomeCard = ({ gnome }) => {
     let [display, setDisplay] = useState(false);
-    return (
+
+    return gnome ? (
         <GnomeLink key={gnome.id}>
             <CardWrapper>
                 <DataContainer>
@@ -32,6 +33,8 @@ const GnomeCard = ({ gnome }) => {
                 </DataContainer>
             </CardWrapper>
         </GnomeLink>
+    ) : (
+        <p>{"Gnome was not received"}</p>
     );
 };
 export default GnomeCard;
