@@ -3,7 +3,7 @@ import { Paginator, Page } from "./styles";
 
 const ComponentPaginated = ({ data, Component }) => {
     var [page, setPage] = useState(1);
-    var [qtyPerPage, setQtyPerPage] = useState(50);
+    var [qtyPerPage] = useState(50);
     const handleClick = (evt) => {
         setPage(Number(evt.target.id));
     };
@@ -19,12 +19,12 @@ const ComponentPaginated = ({ data, Component }) => {
         pageNumbers.push(i);
     }
     const renderPageNumbers = pageNumbers.map((number) => {
-        if (number + 1 == page || number - 1 == page || number == page) {
+        if (number + 1 === page || number - 1 === page || number === page) {
             return (
                 <Page
                     key={number}
                     id={number}
-                    selected={number == page}
+                    selected={number === page}
                     onClick={handleClick}
                 >
                     {number}

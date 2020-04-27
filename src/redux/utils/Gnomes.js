@@ -20,7 +20,7 @@ export const selectGnomeUtil = (gnome) => (dispatch) => {
             "https://raw.githubusercontent.com/rrafols/mobile_test/master/data.json"
         )
         .then(({ data }) =>
-            data.Brastlewark.find((single) => single.id == gnome)
+            data.Brastlewark.find((single) => single.id === gnome)
         )
         .then((gnome) => dispatch(selectGnome(gnome)));
 };

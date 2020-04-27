@@ -23,19 +23,19 @@ const ProfessionBox = ({
         let profArr = [];
         gnomes.map((gnome) => {
             gnome.professions.map((prof) => {
-                if (profArr.indexOf(prof) == -1) {
+                if (profArr.indexOf(prof) === -1) {
                     profArr.push(prof);
                 }
             });
         });
         registerProfessions(profArr);
-        if (selectedProfession == "" || selectedProfession == undefined) {
+        if (selectedProfession === "" || selectedProfession === undefined) {
             selectProfession("all");
         }
     }, [gnomes, registerProfessions, selectProfession, selectedProfession]);
 
     const handleSelect = (e) => {
-        selectProfession(e.target.value);
+        return selectProfession(e.target.value);
     };
 
     return (
