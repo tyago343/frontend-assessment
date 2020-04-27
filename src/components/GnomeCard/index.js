@@ -25,7 +25,7 @@ const GnomeCard = ({ gnome }) => {
                         >
                             {`${display ? "Hide" : "Show"} professions`}
                         </ProfessionsButton>
-                        <ProfessionList gnome={gnome} display={display} />
+                        {display ? <ProfessionList gnome={gnome} /> : ""}
                         <MeetGnomeButton to={`/gnome/${gnome.id}`}>
                             Meet gnome
                         </MeetGnomeButton>

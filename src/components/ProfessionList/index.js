@@ -1,8 +1,8 @@
 import React from "react";
 import { Div, Profession, H3, List } from "./styles";
-const ProfessionList = ({ gnome, display, detailPage }) => {
+const ProfessionList = ({ gnome, detailPage }) => {
     return (
-        <Div display={display} detailPage={detailPage}>
+        <Div data-testid="profession-list-component" detailPage={detailPage}>
             <H3>Professions:</H3>
             {gnome.professions && gnome.professions.length ? (
                 <List detailPage={detailPage}>

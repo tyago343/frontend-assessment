@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Div = styled.div`
-    display: ${({ display }) => (display ? "block" : "none")};
     position: ${({ detailPage }) => (detailPage ? "relative" : "absolute")};
     background-color: ${({ detailPage }) => (detailPage ? "none" : "#0563af")};
     padding: ${({ detailPage }) => (detailPage ? "0" : "25px 15px")};
