@@ -2,7 +2,6 @@ import React, { Fragment, useState, useEffect } from "react";
 import { connect } from "react-redux";
 import GnomeCard from "../../components/GnomeCard";
 import Header from "../../components/Header";
-import "react-virtualized/styles.css";
 import ComponentPaginated from "../../components/ComponentPaginated";
 import { ListWrapper } from "./styles";
 
