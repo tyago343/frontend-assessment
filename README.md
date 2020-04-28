@@ -7,6 +7,10 @@ git clone https://github.com/tyago343/frontend-assessment.git
 ```
 
 ```
+cd frontend-assessment
+```
+
+```
 npm install
 ```
 
