@@ -1,5 +1,15 @@
 # [Brastlewark app](https://brastlewarkaxaapp.herokuapp.com/)
 
+Para tener el repositorio en local: <br />
+
+```
+git clone https://github.com/tyago343/frontend-assessment.git
+```
+
+```
+npm install
+```
+
 ## Scripts disponibles
 
 En el directorio raíz del proyecto, se pueden utilizar:
@@ -27,6 +37,6 @@ Este proyecto fue construido a partir de [Create React App](https://github.com/f
 
 Librerías utilizadas:
 
--- Axios para las peticiones http
--- Redux thunk para las aciones asíncronas
+-- Axios para las peticiones http<br />
+-- Redux thunk para las aciones asíncronas<br />
 -- Styled components para configurar el diseño de la app
