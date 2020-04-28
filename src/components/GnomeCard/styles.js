@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const CardWrapper = styled.div`
     display: block;
@@ -82,7 +83,7 @@ export const ProfessionsButton = styled.button`
         margin: 10px; 0;
     }
 `;
-export const MeetGnomeButton = styled.p`
+export const MeetGnomeButton = styled(Link)`
     box-shadow: inset 0px 39px 0px -24px #e67a73;
     background-color: #e4685d;
     border-radius: 4px;
